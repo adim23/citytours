@@ -99,7 +99,7 @@ export const BookingDetail = () => {
           <dt>
             <Translate contentKey="citytoursApp.booking.schedule">Schedule</Translate>
           </dt>
-          <dd>{bookingEntity.schedule ? bookingEntity.schedule.id : ''}</dd>
+          <dd>{bookingEntity.schedule ? bookingEntity.schedule.code : ''}</dd>
           <dt>
             <Translate contentKey="citytoursApp.booking.passenger">Passenger</Translate>
           </dt>

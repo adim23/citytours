@@ -114,13 +114,9 @@ export const Driver = () => {
                 <th className="hand" onClick={sort('id')}>
                   <Translate contentKey="citytoursApp.driver.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
-                <th className="hand" onClick={sort('firstName')}>
-                  <Translate contentKey="citytoursApp.driver.firstName">First Name</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('firstName')} />
-                </th>
-                <th className="hand" onClick={sort('lastName')}>
-                  <Translate contentKey="citytoursApp.driver.lastName">Last Name</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('lastName')} />
+                <th className="hand" onClick={sort('name')}>
+                  <Translate contentKey="citytoursApp.driver.name">Name</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('hiredAt')}>
                   <Translate contentKey="citytoursApp.driver.hiredAt">Hired At</Translate>{' '}
@@ -148,8 +144,7 @@ export const Driver = () => {
                       {driver.id}
                     </Button>
                   </td>
-                  <td>{driver.firstName}</td>
-                  <td>{driver.lastName}</td>
+                  <td>{driver.name}</td>
                   <td>{driver.hiredAt ? <TextFormat type="date" value={driver.hiredAt} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{driver.age}</td>
                   <td>{driver.email}</td>

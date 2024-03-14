@@ -125,6 +125,16 @@ export const TourScheduleUpdate = () => {
                 />
               ) : null}
               <ValidatedField
+                label={translate('citytoursApp.tourSchedule.code')}
+                id="tour-schedule-code"
+                name="code"
+                data-cy="code"
+                type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
+              />
+              <ValidatedField
                 label={translate('citytoursApp.tourSchedule.startDatetime')}
                 id="tour-schedule-startDatetime"
                 name="startDatetime"
@@ -213,7 +223,7 @@ export const TourScheduleUpdate = () => {
                 {drivers
                   ? drivers.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.lastName}
+                        {otherEntity.name}
                       </option>
                     ))
                   : null}

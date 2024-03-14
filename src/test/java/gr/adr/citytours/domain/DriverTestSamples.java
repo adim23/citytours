@@ -12,18 +12,17 @@ public class DriverTestSamples {
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static Driver getDriverSample1() {
-        return new Driver().id(1L).firstName("firstName1").lastName("lastName1").age(1).email("email1").mobile("mobile1");
+        return new Driver().id(1L).name("name1").age(1).email("email1").mobile("mobile1");
     }
 
     public static Driver getDriverSample2() {
-        return new Driver().id(2L).firstName("firstName2").lastName("lastName2").age(2).email("email2").mobile("mobile2");
+        return new Driver().id(2L).name("name2").age(2).email("email2").mobile("mobile2");
     }
 
     public static Driver getDriverRandomSampleGenerator() {
         return new Driver()
             .id(longCount.incrementAndGet())
-            .firstName(UUID.randomUUID().toString())
-            .lastName(UUID.randomUUID().toString())
+            .name(UUID.randomUUID().toString())
             .age(intCount.incrementAndGet())
             .email(UUID.randomUUID().toString())
             .mobile(UUID.randomUUID().toString());

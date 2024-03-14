@@ -45,6 +45,9 @@ public class TourScheduleServiceImpl implements TourScheduleService {
         return tourScheduleRepository
             .findById(tourSchedule.getId())
             .map(existingTourSchedule -> {
+                if (tourSchedule.getCode() != null) {
+                    existingTourSchedule.setCode(tourSchedule.getCode());
+                }
                 if (tourSchedule.getStartDatetime() != null) {
                     existingTourSchedule.setStartDatetime(tourSchedule.getStartDatetime());
                 }

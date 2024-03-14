@@ -33,17 +33,11 @@ export const DriverDetail = () => {
           </dt>
           <dd>{driverEntity.id}</dd>
           <dt>
-            <span id="firstName">
-              <Translate contentKey="citytoursApp.driver.firstName">First Name</Translate>
+            <span id="name">
+              <Translate contentKey="citytoursApp.driver.name">Name</Translate>
             </span>
           </dt>
-          <dd>{driverEntity.firstName}</dd>
-          <dt>
-            <span id="lastName">
-              <Translate contentKey="citytoursApp.driver.lastName">Last Name</Translate>
-            </span>
-          </dt>
-          <dd>{driverEntity.lastName}</dd>
+          <dd>{driverEntity.name}</dd>
           <dt>
             <span id="hiredAt">
               <Translate contentKey="citytoursApp.driver.hiredAt">Hired At</Translate>

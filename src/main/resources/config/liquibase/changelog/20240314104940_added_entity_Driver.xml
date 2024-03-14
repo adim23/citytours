@@ -14,10 +14,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="first_name" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            <column name="last_name" type="varchar(255)">
+            <column name="name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             <column name="hired_at" type="${datetimeType}">
@@ -54,8 +51,7 @@
                   tableName="driver"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="first_name" type="string"/>
-            <column name="last_name" type="string"/>
+            <column name="name" type="string"/>
             <column name="hired_at" type="date"/>
             <column name="age" type="numeric"/>
             <column name="email" type="string"/>

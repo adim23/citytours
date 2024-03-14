@@ -45,11 +45,8 @@ public class DriverServiceImpl implements DriverService {
         return driverRepository
             .findById(driver.getId())
             .map(existingDriver -> {
-                if (driver.getFirstName() != null) {
-                    existingDriver.setFirstName(driver.getFirstName());
-                }
-                if (driver.getLastName() != null) {
-                    existingDriver.setLastName(driver.getLastName());
+                if (driver.getName() != null) {
+                    existingDriver.setName(driver.getName());
                 }
                 if (driver.getHiredAt() != null) {
                     existingDriver.setHiredAt(driver.getHiredAt());

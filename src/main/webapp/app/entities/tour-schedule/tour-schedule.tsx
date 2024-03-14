@@ -115,6 +115,10 @@ export const TourSchedule = () => {
                   <Translate contentKey="citytoursApp.tourSchedule.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
+                <th className="hand" onClick={sort('code')}>
+                  <Translate contentKey="citytoursApp.tourSchedule.code">Code</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
+                </th>
                 <th className="hand" onClick={sort('startDatetime')}>
                   <Translate contentKey="citytoursApp.tourSchedule.startDatetime">Start Datetime</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('startDatetime')} />
@@ -159,6 +163,7 @@ export const TourSchedule = () => {
                       {tourSchedule.id}
                     </Button>
                   </td>
+                  <td>{tourSchedule.code}</td>
                   <td>
                     {tourSchedule.startDatetime ? (
                       <TextFormat type="date" value={tourSchedule.startDatetime} format={APP_DATE_FORMAT} />
@@ -173,7 +178,7 @@ export const TourSchedule = () => {
                   <td>
                     {tourSchedule.vehicle ? <Link to={`/vehicle/${tourSchedule.vehicle.id}`}>{tourSchedule.vehicle.plate}</Link> : ''}
                   </td>
-                  <td>{tourSchedule.driver ? <Link to={`/driver/${tourSchedule.driver.id}`}>{tourSchedule.driver.lastName}</Link> : ''}</td>
+                  <td>{tourSchedule.driver ? <Link to={`/driver/${tourSchedule.driver.id}`}>{tourSchedule.driver.name}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/tour-schedule/${tourSchedule.id}`} color="info" size="sm" data-cy="entityDetailsButton">

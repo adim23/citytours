@@ -28,6 +28,10 @@ public class TourSchedule implements Serializable {
     private Long id;
 
     @NotNull
+    @Column(name = "code", nullable = false)
+    private String code;
+
+    @NotNull
     @Column(name = "start_datetime", nullable = false)
     private Instant startDatetime;
 
@@ -76,6 +80,19 @@ public class TourSchedule implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public TourSchedule code(String code) {
+        this.setCode(code);
+        return this;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Instant getStartDatetime() {
@@ -250,6 +267,7 @@ public class TourSchedule implements Serializable {
     public String toString() {
         return "TourSchedule{" +
             "id=" + getId() +
+            ", code='" + getCode() + "'" +
             ", startDatetime='" + getStartDatetime() + "'" +
             ", noPassengers=" + getNoPassengers() +
             ", noKids=" + getNoKids() +
