@@ -1,0 +1,34 @@
+{
+  "citytoursApp": {
+    "tour": {
+      "home": {
+        "title": "Tours",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tour",
+        "createOrEditLabel": "Create or edit a Tour",
+        "notFound": "No Tours found"
+      },
+      "created": "A new Tour is created with identifier {{ param }}",
+      "updated": "A Tour is updated with identifier {{ param }}",
+      "deleted": "A Tour is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tour {{ id }}?"
+      },
+      "detail": {
+        "title": "Tour"
+      },
+      "id": "ID",
+      "code": "Code",
+      "title": "Title",
+      "duration": "Duration",
+      "petFriendly": "Pet Friendly",
+      "kidsAllowed": "Kids Allowed",
+      "availableFromDate": "Available From Date",
+      "availableToDate": "Available To Date",
+      "enabled": "Enabled",
+      "tourSchedule": "Tour Schedule",
+      "steps": "Steps",
+      "city": "City"
+    }
+  }
+}

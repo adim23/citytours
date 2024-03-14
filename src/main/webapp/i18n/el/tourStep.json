@@ -1,0 +1,29 @@
+{
+  "citytoursApp": {
+    "tourStep": {
+      "home": {
+        "title": "Tour Steps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Tour Step",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Tour Step",
+        "notFound": "No Tour Steps found"
+      },
+      "created": "Ένα νέο Tour Step έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Tour Step έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Tour Step έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Tour Step {{ id }};"
+      },
+      "detail": {
+        "title": "Tour Step"
+      },
+      "id": "ID",
+      "code": "Code",
+      "stepOrder": "Step Order",
+      "waitTime": "Wait Time",
+      "driveTime": "Drive Time",
+      "tour": "Tour",
+      "place": "Place"
+    }
+  }
+}

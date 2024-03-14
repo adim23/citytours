@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20240314104840"
+  },
+  "applications": "*",
+  "entityTableName": "tour_schedule",
+  "fields": [
+    {
+      "fieldName": "startDatetime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "noPassengers",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "noKids",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "noPets",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startPlace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endPlace",
+      "fieldType": "String"
+    }
+  ],
+  "name": "TourSchedule",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "booking",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "bookings",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "tour",
+      "relationshipName": "tour",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "plate",
+      "otherEntityName": "vehicle",
+      "relationshipName": "vehicle",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "lastName",
+      "otherEntityName": "driver",
+      "relationshipName": "driver",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

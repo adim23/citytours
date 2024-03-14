@@ -1,0 +1,30 @@
+{
+  "citytoursApp": {
+    "passenger": {
+      "home": {
+        "title": "Passengers",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Passenger erstellen",
+        "createOrEditLabel": "Passenger erstellen oder bearbeiten",
+        "notFound": "Keine Passengers gefunden"
+      },
+      "created": "Passenger erstellt mit ID {{ param }}",
+      "updated": "Passenger aktualisiert mit ID {{ param }}",
+      "deleted": "Passenger gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Passenger {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Passenger"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "mobile": "Mobile",
+      "age": "Age",
+      "gender": "Gender",
+      "nationality": "Nationality",
+      "bookings": "Bookings"
+    }
+  }
+}

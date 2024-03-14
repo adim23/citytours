@@ -1,0 +1,74 @@
+{
+  "annotations": {
+    "changelogDate": "20240314104640"
+  },
+  "applications": "*",
+  "entityTableName": "tour",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "petFriendly",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kidsAllowed",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "availableFromDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "availableToDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Tour",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "tourSchedule",
+      "otherEntityRelationshipName": "tour",
+      "relationshipName": "tourSchedule",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "tourStep",
+      "otherEntityRelationshipName": "tour",
+      "relationshipName": "steps",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "city",
+      "otherEntityRelationshipName": "tours",
+      "relationshipName": "city",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

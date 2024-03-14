@@ -1,0 +1,35 @@
+{
+  "citytoursApp": {
+    "booking": {
+      "home": {
+        "title": "Bookings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Booking",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Booking",
+        "notFound": "No Bookings found"
+      },
+      "created": "Ένα νέο Booking έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Booking έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Booking έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Booking {{ id }};"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "id": "ID",
+      "bookDatetime": "Book Datetime",
+      "noPersons": "No Persons",
+      "noKids": "No Kids",
+      "noPets": "No Pets",
+      "cost": "Cost",
+      "paymentType": "Payment Type",
+      "valid": "Valid",
+      "cancelledAt": "Cancelled At",
+      "remoteData": "Remote Data",
+      "remoteId": "Remote Id",
+      "schedule": "Schedule",
+      "passenger": "Passenger"
+    }
+  }
+}

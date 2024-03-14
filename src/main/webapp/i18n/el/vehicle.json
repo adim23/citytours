@@ -1,0 +1,28 @@
+{
+  "citytoursApp": {
+    "vehicle": {
+      "home": {
+        "title": "Vehicles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Vehicle",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Vehicle",
+        "notFound": "No Vehicles found"
+      },
+      "created": "Ένα νέο Vehicle έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Vehicle έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Vehicle έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Vehicle {{ id }};"
+      },
+      "detail": {
+        "title": "Vehicle"
+      },
+      "id": "ID",
+      "plate": "Plate",
+      "type": "Type",
+      "capacity": "Capacity",
+      "color": "Color",
+      "tourSchedule": "Tour Schedule"
+    }
+  }
+}

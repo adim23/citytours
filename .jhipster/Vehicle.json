@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20240314105040"
+  },
+  "applications": "*",
+  "entityTableName": "vehicle",
+  "fields": [
+    {
+      "fieldName": "plate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "capacity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "color",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Vehicle",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "tourSchedule",
+      "otherEntityRelationshipName": "vehicle",
+      "relationshipName": "tourSchedule",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

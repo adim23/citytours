@@ -1,0 +1,49 @@
+{
+  "annotations": {
+    "changelogDate": "20240314104740"
+  },
+  "applications": "*",
+  "entityTableName": "tour_step",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "stepOrder",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "waitTime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "driveTime",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "TourStep",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "tour",
+      "otherEntityRelationshipName": "steps",
+      "relationshipName": "tour",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "place",
+      "otherEntityRelationshipName": "steps",
+      "relationshipName": "place",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

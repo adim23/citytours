@@ -1,0 +1,27 @@
+{
+  "citytoursApp": {
+    "city": {
+      "home": {
+        "title": "Cities",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau City",
+        "createOrEditLabel": "Créer ou éditer un City",
+        "notFound": "Aucun City trouvé"
+      },
+      "created": "Un nouveau City a été créé avec l'identifiant {{ param }}",
+      "updated": "Le City avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le City avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le City {{ id }} ?"
+      },
+      "detail": {
+        "title": "City"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "tours": "Tours",
+      "places": "Places"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "citytoursApp": {
+    "tourSchedule": {
+      "home": {
+        "title": "Tour Schedules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Tour Schedule",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Tour Schedule",
+        "notFound": "No Tour Schedules found"
+      },
+      "created": "Ένα νέο Tour Schedule έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Tour Schedule έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Tour Schedule έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Tour Schedule {{ id }};"
+      },
+      "detail": {
+        "title": "Tour Schedule"
+      },
+      "id": "ID",
+      "startDatetime": "Start Datetime",
+      "noPassengers": "No Passengers",
+      "noKids": "No Kids",
+      "noPets": "No Pets",
+      "startPlace": "Start Place",
+      "endPlace": "End Place",
+      "bookings": "Bookings",
+      "tour": "Tour",
+      "vehicle": "Vehicle",
+      "driver": "Driver"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "citytoursApp": {
+    "vehicle": {
+      "home": {
+        "title": "Vehicles",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Vehicle erstellen",
+        "createOrEditLabel": "Vehicle erstellen oder bearbeiten",
+        "notFound": "Keine Vehicles gefunden"
+      },
+      "created": "Vehicle erstellt mit ID {{ param }}",
+      "updated": "Vehicle aktualisiert mit ID {{ param }}",
+      "deleted": "Vehicle gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Vehicle {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Vehicle"
+      },
+      "id": "ID",
+      "plate": "Plate",
+      "type": "Type",
+      "capacity": "Capacity",
+      "color": "Color",
+      "tourSchedule": "Tour Schedule"
+    }
+  }
+}
