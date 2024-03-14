@@ -31,11 +31,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class DriverResourceIT {
 
-    private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_FIRST_NAME = "BBBBBBBBBB";
-
-    private static final String DEFAULT_LAST_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_LAST_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
 
     private static final Instant DEFAULT_HIRED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_HIRED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -74,8 +71,7 @@ class DriverResourceIT {
      */
     public static Driver createEntity(EntityManager em) {
         Driver driver = new Driver()
-            .firstName(DEFAULT_FIRST_NAME)
-            .lastName(DEFAULT_LAST_NAME)
+            .name(DEFAULT_NAME)
             .hiredAt(DEFAULT_HIRED_AT)
             .age(DEFAULT_AGE)
             .email(DEFAULT_EMAIL)
@@ -91,8 +87,7 @@ class DriverResourceIT {
      */
     public static Driver createUpdatedEntity(EntityManager em) {
         Driver driver = new Driver()
-            .firstName(UPDATED_FIRST_NAME)
-            .lastName(UPDATED_LAST_NAME)
+            .name(UPDATED_NAME)
             .hiredAt(UPDATED_HIRED_AT)
             .age(UPDATED_AGE)
             .email(UPDATED_EMAIL)
@@ -118,8 +113,7 @@ class DriverResourceIT {
         List<Driver> driverList = driverRepository.findAll();
         assertThat(driverList).hasSize(databaseSizeBeforeCreate + 1);
         Driver testDriver = driverList.get(driverList.size() - 1);
-        assertThat(testDriver.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
-        assertThat(testDriver.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
+        assertThat(testDriver.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testDriver.getHiredAt()).isEqualTo(DEFAULT_HIRED_AT);
         assertThat(testDriver.getAge()).isEqualTo(DEFAULT_AGE);
         assertThat(testDriver.getEmail()).isEqualTo(DEFAULT_EMAIL);
@@ -146,27 +140,10 @@ class DriverResourceIT {
 
     @Test
     @Transactional
-    void checkFirstNameIsRequired() throws Exception {
+    void checkNameIsRequired() throws Exception {
         int databaseSizeBeforeTest = driverRepository.findAll().size();
         // set the field null
-        driver.setFirstName(null);
-
-        // Create the Driver, which fails.
-
-        restDriverMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(driver)))
-            .andExpect(status().isBadRequest());
-
-        List<Driver> driverList = driverRepository.findAll();
-        assertThat(driverList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkLastNameIsRequired() throws Exception {
-        int databaseSizeBeforeTest = driverRepository.findAll().size();
-        // set the field null
-        driver.setLastName(null);
+        driver.setName(null);
 
         // Create the Driver, which fails.
 
@@ -190,8 +167,7 @@ class DriverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(driver.getId().intValue())))
-            .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME)))
-            .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].hiredAt").value(hasItem(DEFAULT_HIRED_AT.toString())))
             .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
@@ -210,8 +186,7 @@ class DriverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(driver.getId().intValue()))
-            .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME))
-            .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.hiredAt").value(DEFAULT_HIRED_AT.toString()))
             .andExpect(jsonPath("$.age").value(DEFAULT_AGE))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
@@ -237,13 +212,7 @@ class DriverResourceIT {
         Driver updatedDriver = driverRepository.findById(driver.getId()).orElseThrow();
         // Disconnect from session so that the updates on updatedDriver are not directly saved in db
         em.detach(updatedDriver);
-        updatedDriver
-            .firstName(UPDATED_FIRST_NAME)
-            .lastName(UPDATED_LAST_NAME)
-            .hiredAt(UPDATED_HIRED_AT)
-            .age(UPDATED_AGE)
-            .email(UPDATED_EMAIL)
-            .mobile(UPDATED_MOBILE);
+        updatedDriver.name(UPDATED_NAME).hiredAt(UPDATED_HIRED_AT).age(UPDATED_AGE).email(UPDATED_EMAIL).mobile(UPDATED_MOBILE);
 
         restDriverMockMvc
             .perform(
@@ -257,8 +226,7 @@ class DriverResourceIT {
         List<Driver> driverList = driverRepository.findAll();
         assertThat(driverList).hasSize(databaseSizeBeforeUpdate);
         Driver testDriver = driverList.get(driverList.size() - 1);
-        assertThat(testDriver.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testDriver.getLastName()).isEqualTo(UPDATED_LAST_NAME);
+        assertThat(testDriver.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testDriver.getHiredAt()).isEqualTo(UPDATED_HIRED_AT);
         assertThat(testDriver.getAge()).isEqualTo(UPDATED_AGE);
         assertThat(testDriver.getEmail()).isEqualTo(UPDATED_EMAIL);
@@ -333,12 +301,7 @@ class DriverResourceIT {
         Driver partialUpdatedDriver = new Driver();
         partialUpdatedDriver.setId(driver.getId());
 
-        partialUpdatedDriver
-            .firstName(UPDATED_FIRST_NAME)
-            .lastName(UPDATED_LAST_NAME)
-            .hiredAt(UPDATED_HIRED_AT)
-            .email(UPDATED_EMAIL)
-            .mobile(UPDATED_MOBILE);
+        partialUpdatedDriver.name(UPDATED_NAME).hiredAt(UPDATED_HIRED_AT).age(UPDATED_AGE).mobile(UPDATED_MOBILE);
 
         restDriverMockMvc
             .perform(
@@ -352,11 +315,10 @@ class DriverResourceIT {
         List<Driver> driverList = driverRepository.findAll();
         assertThat(driverList).hasSize(databaseSizeBeforeUpdate);
         Driver testDriver = driverList.get(driverList.size() - 1);
-        assertThat(testDriver.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testDriver.getLastName()).isEqualTo(UPDATED_LAST_NAME);
+        assertThat(testDriver.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testDriver.getHiredAt()).isEqualTo(UPDATED_HIRED_AT);
-        assertThat(testDriver.getAge()).isEqualTo(DEFAULT_AGE);
-        assertThat(testDriver.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testDriver.getAge()).isEqualTo(UPDATED_AGE);
+        assertThat(testDriver.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testDriver.getMobile()).isEqualTo(UPDATED_MOBILE);
     }
 
@@ -372,13 +334,7 @@ class DriverResourceIT {
         Driver partialUpdatedDriver = new Driver();
         partialUpdatedDriver.setId(driver.getId());
 
-        partialUpdatedDriver
-            .firstName(UPDATED_FIRST_NAME)
-            .lastName(UPDATED_LAST_NAME)
-            .hiredAt(UPDATED_HIRED_AT)
-            .age(UPDATED_AGE)
-            .email(UPDATED_EMAIL)
-            .mobile(UPDATED_MOBILE);
+        partialUpdatedDriver.name(UPDATED_NAME).hiredAt(UPDATED_HIRED_AT).age(UPDATED_AGE).email(UPDATED_EMAIL).mobile(UPDATED_MOBILE);
 
         restDriverMockMvc
             .perform(
@@ -392,8 +348,7 @@ class DriverResourceIT {
         List<Driver> driverList = driverRepository.findAll();
         assertThat(driverList).hasSize(databaseSizeBeforeUpdate);
         Driver testDriver = driverList.get(driverList.size() - 1);
-        assertThat(testDriver.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testDriver.getLastName()).isEqualTo(UPDATED_LAST_NAME);
+        assertThat(testDriver.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testDriver.getHiredAt()).isEqualTo(UPDATED_HIRED_AT);
         assertThat(testDriver.getAge()).isEqualTo(UPDATED_AGE);
         assertThat(testDriver.getEmail()).isEqualTo(UPDATED_EMAIL);

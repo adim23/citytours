@@ -52,6 +52,7 @@
   "pagination": "pagination",
   "relationships": [
     {
+      "otherEntityField": "code",
       "otherEntityName": "tourSchedule",
       "otherEntityRelationshipName": "bookings",
       "relationshipName": "schedule",

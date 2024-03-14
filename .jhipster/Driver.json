@@ -6,12 +6,7 @@
   "entityTableName": "driver",
   "fields": [
     {
-      "fieldName": "firstName",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "lastName",
+      "fieldName": "name",
       "fieldType": "String",
       "fieldValidateRules": ["required"]
     },

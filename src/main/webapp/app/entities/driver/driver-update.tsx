@@ -100,20 +100,10 @@ export const DriverUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('citytoursApp.driver.firstName')}
-                id="driver-firstName"
-                name="firstName"
-                data-cy="firstName"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
-              />
-              <ValidatedField
-                label={translate('citytoursApp.driver.lastName')}
-                id="driver-lastName"
-                name="lastName"
-                data-cy="lastName"
+                label={translate('citytoursApp.driver.name')}
+                id="driver-name"
+                name="name"
+                data-cy="name"
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },

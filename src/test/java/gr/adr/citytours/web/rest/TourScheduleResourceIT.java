@@ -40,6 +40,9 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class TourScheduleResourceIT {
 
+    private static final String DEFAULT_CODE = "AAAAAAAAAA";
+    private static final String UPDATED_CODE = "BBBBBBBBBB";
+
     private static final Instant DEFAULT_START_DATETIME = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_START_DATETIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -89,6 +92,7 @@ class TourScheduleResourceIT {
      */
     public static TourSchedule createEntity(EntityManager em) {
         TourSchedule tourSchedule = new TourSchedule()
+            .code(DEFAULT_CODE)
             .startDatetime(DEFAULT_START_DATETIME)
             .noPassengers(DEFAULT_NO_PASSENGERS)
             .noKids(DEFAULT_NO_KIDS)
@@ -106,6 +110,7 @@ class TourScheduleResourceIT {
      */
     public static TourSchedule createUpdatedEntity(EntityManager em) {
         TourSchedule tourSchedule = new TourSchedule()
+            .code(UPDATED_CODE)
             .startDatetime(UPDATED_START_DATETIME)
             .noPassengers(UPDATED_NO_PASSENGERS)
             .noKids(UPDATED_NO_KIDS)
@@ -133,6 +138,7 @@ class TourScheduleResourceIT {
         List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
         assertThat(tourScheduleList).hasSize(databaseSizeBeforeCreate + 1);
         TourSchedule testTourSchedule = tourScheduleList.get(tourScheduleList.size() - 1);
+        assertThat(testTourSchedule.getCode()).isEqualTo(DEFAULT_CODE);
         assertThat(testTourSchedule.getStartDatetime()).isEqualTo(DEFAULT_START_DATETIME);
         assertThat(testTourSchedule.getNoPassengers()).isEqualTo(DEFAULT_NO_PASSENGERS);
         assertThat(testTourSchedule.getNoKids()).isEqualTo(DEFAULT_NO_KIDS);
@@ -157,6 +163,23 @@ class TourScheduleResourceIT {
         // Validate the TourSchedule in the database
         List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
         assertThat(tourScheduleList).hasSize(databaseSizeBeforeCreate);
+    }
+
+    @Test
+    @Transactional
+    void checkCodeIsRequired() throws Exception {
+        int databaseSizeBeforeTest = tourScheduleRepository.findAll().size();
+        // set the field null
+        tourSchedule.setCode(null);
+
+        // Create the TourSchedule, which fails.
+
+        restTourScheduleMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(tourSchedule)))
+            .andExpect(status().isBadRequest());
+
+        List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
+        assertThat(tourScheduleList).hasSize(databaseSizeBeforeTest);
     }
 
     @Test
@@ -188,6 +211,7 @@ class TourScheduleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(tourSchedule.getId().intValue())))
+            .andExpect(jsonPath("$.[*].code").value(hasItem(DEFAULT_CODE)))
             .andExpect(jsonPath("$.[*].startDatetime").value(hasItem(DEFAULT_START_DATETIME.toString())))
             .andExpect(jsonPath("$.[*].noPassengers").value(hasItem(DEFAULT_NO_PASSENGERS)))
             .andExpect(jsonPath("$.[*].noKids").value(hasItem(DEFAULT_NO_KIDS)))
@@ -225,6 +249,7 @@ class TourScheduleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(tourSchedule.getId().intValue()))
+            .andExpect(jsonPath("$.code").value(DEFAULT_CODE))
             .andExpect(jsonPath("$.startDatetime").value(DEFAULT_START_DATETIME.toString()))
             .andExpect(jsonPath("$.noPassengers").value(DEFAULT_NO_PASSENGERS))
             .andExpect(jsonPath("$.noKids").value(DEFAULT_NO_KIDS))
@@ -253,6 +278,7 @@ class TourScheduleResourceIT {
         // Disconnect from session so that the updates on updatedTourSchedule are not directly saved in db
         em.detach(updatedTourSchedule);
         updatedTourSchedule
+            .code(UPDATED_CODE)
             .startDatetime(UPDATED_START_DATETIME)
             .noPassengers(UPDATED_NO_PASSENGERS)
             .noKids(UPDATED_NO_KIDS)
@@ -272,6 +298,7 @@ class TourScheduleResourceIT {
         List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
         assertThat(tourScheduleList).hasSize(databaseSizeBeforeUpdate);
         TourSchedule testTourSchedule = tourScheduleList.get(tourScheduleList.size() - 1);
+        assertThat(testTourSchedule.getCode()).isEqualTo(UPDATED_CODE);
         assertThat(testTourSchedule.getStartDatetime()).isEqualTo(UPDATED_START_DATETIME);
         assertThat(testTourSchedule.getNoPassengers()).isEqualTo(UPDATED_NO_PASSENGERS);
         assertThat(testTourSchedule.getNoKids()).isEqualTo(UPDATED_NO_KIDS);
@@ -348,7 +375,7 @@ class TourScheduleResourceIT {
         TourSchedule partialUpdatedTourSchedule = new TourSchedule();
         partialUpdatedTourSchedule.setId(tourSchedule.getId());
 
-        partialUpdatedTourSchedule.noKids(UPDATED_NO_KIDS).endPlace(UPDATED_END_PLACE);
+        partialUpdatedTourSchedule.noPassengers(UPDATED_NO_PASSENGERS).startPlace(UPDATED_START_PLACE).endPlace(UPDATED_END_PLACE);
 
         restTourScheduleMockMvc
             .perform(
@@ -362,11 +389,12 @@ class TourScheduleResourceIT {
         List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
         assertThat(tourScheduleList).hasSize(databaseSizeBeforeUpdate);
         TourSchedule testTourSchedule = tourScheduleList.get(tourScheduleList.size() - 1);
+        assertThat(testTourSchedule.getCode()).isEqualTo(DEFAULT_CODE);
         assertThat(testTourSchedule.getStartDatetime()).isEqualTo(DEFAULT_START_DATETIME);
-        assertThat(testTourSchedule.getNoPassengers()).isEqualTo(DEFAULT_NO_PASSENGERS);
-        assertThat(testTourSchedule.getNoKids()).isEqualTo(UPDATED_NO_KIDS);
+        assertThat(testTourSchedule.getNoPassengers()).isEqualTo(UPDATED_NO_PASSENGERS);
+        assertThat(testTourSchedule.getNoKids()).isEqualTo(DEFAULT_NO_KIDS);
         assertThat(testTourSchedule.getNoPets()).isEqualTo(DEFAULT_NO_PETS);
-        assertThat(testTourSchedule.getStartPlace()).isEqualTo(DEFAULT_START_PLACE);
+        assertThat(testTourSchedule.getStartPlace()).isEqualTo(UPDATED_START_PLACE);
         assertThat(testTourSchedule.getEndPlace()).isEqualTo(UPDATED_END_PLACE);
     }
 
@@ -383,6 +411,7 @@ class TourScheduleResourceIT {
         partialUpdatedTourSchedule.setId(tourSchedule.getId());
 
         partialUpdatedTourSchedule
+            .code(UPDATED_CODE)
             .startDatetime(UPDATED_START_DATETIME)
             .noPassengers(UPDATED_NO_PASSENGERS)
             .noKids(UPDATED_NO_KIDS)
@@ -402,6 +431,7 @@ class TourScheduleResourceIT {
         List<TourSchedule> tourScheduleList = tourScheduleRepository.findAll();
         assertThat(tourScheduleList).hasSize(databaseSizeBeforeUpdate);
         TourSchedule testTourSchedule = tourScheduleList.get(tourScheduleList.size() - 1);
+        assertThat(testTourSchedule.getCode()).isEqualTo(UPDATED_CODE);
         assertThat(testTourSchedule.getStartDatetime()).isEqualTo(UPDATED_START_DATETIME);
         assertThat(testTourSchedule.getNoPassengers()).isEqualTo(UPDATED_NO_PASSENGERS);
         assertThat(testTourSchedule.getNoKids()).isEqualTo(UPDATED_NO_KIDS);

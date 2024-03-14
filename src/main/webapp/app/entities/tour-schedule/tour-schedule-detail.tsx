@@ -33,6 +33,12 @@ export const TourScheduleDetail = () => {
           </dt>
           <dd>{tourScheduleEntity.id}</dd>
           <dt>
+            <span id="code">
+              <Translate contentKey="citytoursApp.tourSchedule.code">Code</Translate>
+            </span>
+          </dt>
+          <dd>{tourScheduleEntity.code}</dd>
+          <dt>
             <span id="startDatetime">
               <Translate contentKey="citytoursApp.tourSchedule.startDatetime">Start Datetime</Translate>
             </span>
@@ -83,7 +89,7 @@ export const TourScheduleDetail = () => {
           <dt>
             <Translate contentKey="citytoursApp.tourSchedule.driver">Driver</Translate>
           </dt>
-          <dd>{tourScheduleEntity.driver ? tourScheduleEntity.driver.lastName : ''}</dd>
+          <dd>{tourScheduleEntity.driver ? tourScheduleEntity.driver.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/tour-schedule" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

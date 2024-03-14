@@ -18,8 +18,7 @@
         "title": "Driver"
       },
       "id": "ID",
-      "firstName": "First Name",
-      "lastName": "Last Name",
+      "name": "Name",
       "hiredAt": "Hired At",
       "age": "Age",
       "email": "Email",

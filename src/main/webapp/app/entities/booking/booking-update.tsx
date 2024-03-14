@@ -205,7 +205,7 @@ export const BookingUpdate = () => {
                 {tourSchedules
                   ? tourSchedules.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.code}
                       </option>
                     ))
                   : null}

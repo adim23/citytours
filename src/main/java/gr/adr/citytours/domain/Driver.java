@@ -28,12 +28,8 @@ public class Driver implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "first_name", nullable = false)
-    private String firstName;
-
-    @NotNull
-    @Column(name = "last_name", nullable = false)
-    private String lastName;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "hired_at")
     private Instant hiredAt;
@@ -67,30 +63,17 @@ public class Driver implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public String getName() {
+        return this.name;
     }
 
-    public Driver firstName(String firstName) {
-        this.setFirstName(firstName);
+    public Driver name(String name) {
+        this.setName(name);
         return this;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public Driver lastName(String lastName) {
-        this.setLastName(lastName);
-        return this;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Instant getHiredAt() {
@@ -200,8 +183,7 @@ public class Driver implements Serializable {
     public String toString() {
         return "Driver{" +
             "id=" + getId() +
-            ", firstName='" + getFirstName() + "'" +
-            ", lastName='" + getLastName() + "'" +
+            ", name='" + getName() + "'" +
             ", hiredAt='" + getHiredAt() + "'" +
             ", age=" + getAge() +
             ", email='" + getEmail() + "'" +

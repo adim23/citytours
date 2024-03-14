@@ -18,6 +18,7 @@
         "title": "Tour Schedule"
       },
       "id": "ID",
+      "code": "Code",
       "startDatetime": "Start Datetime",
       "noPassengers": "No Passengers",
       "noKids": "No Kids",

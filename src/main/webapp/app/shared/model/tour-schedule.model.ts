@@ -6,6 +6,7 @@ import { IDriver } from 'app/shared/model/driver.model';
 
 export interface ITourSchedule {
   id?: number;
+  code?: string;
   startDatetime?: dayjs.Dayjs;
   noPassengers?: number | null;
   noKids?: number | null;

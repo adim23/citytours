@@ -3,8 +3,7 @@ import { ITourSchedule } from 'app/shared/model/tour-schedule.model';
 
 export interface IDriver {
   id?: number;
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   hiredAt?: dayjs.Dayjs | null;
   age?: number | null;
   email?: string | null;

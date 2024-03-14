@@ -181,7 +181,7 @@ export const Booking = () => {
                   <td>{booking.cancelledAt ? <TextFormat type="date" value={booking.cancelledAt} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{booking.remoteData}</td>
                   <td>{booking.remoteId}</td>
-                  <td>{booking.schedule ? <Link to={`/tour-schedule/${booking.schedule.id}`}>{booking.schedule.id}</Link> : ''}</td>
+                  <td>{booking.schedule ? <Link to={`/tour-schedule/${booking.schedule.id}`}>{booking.schedule.code}</Link> : ''}</td>
                   <td>{booking.passenger ? <Link to={`/passenger/${booking.passenger.id}`}>{booking.passenger.name}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

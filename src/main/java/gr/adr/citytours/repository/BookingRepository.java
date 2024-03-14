@@ -27,14 +27,14 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
     }
 
     @Query(
-        value = "select booking from Booking booking left join fetch booking.passenger",
+        value = "select booking from Booking booking left join fetch booking.schedule left join fetch booking.passenger",
         countQuery = "select count(booking) from Booking booking"
     )
     Page<Booking> findAllWithToOneRelationships(Pageable pageable);
 
-    @Query("select booking from Booking booking left join fetch booking.passenger")
+    @Query("select booking from Booking booking left join fetch booking.schedule left join fetch booking.passenger")
     List<Booking> findAllWithToOneRelationships();
 
-    @Query("select booking from Booking booking left join fetch booking.passenger where booking.id =:id")
+    @Query("select booking from Booking booking left join fetch booking.schedule left join fetch booking.passenger where booking.id =:id")
     Optional<Booking> findOneWithToOneRelationships(@Param("id") Long id);
 }

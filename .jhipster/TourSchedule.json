@@ -6,6 +6,11 @@
   "entityTableName": "tour_schedule",
   "fields": [
     {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
       "fieldName": "startDatetime",
       "fieldType": "Instant",
       "fieldValidateRules": ["required"]
@@ -56,7 +61,7 @@
       "relationshipType": "many-to-one"
     },
     {
-      "otherEntityField": "lastName",
+      "otherEntityField": "name",
       "otherEntityName": "driver",
       "relationshipName": "driver",
       "relationshipSide": "right",
