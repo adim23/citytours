@@ -32,6 +32,7 @@ entity TourStep {
 }
 
 entity TourSchedule {
+	code String required
 	startDatetime Instant required
     noPassengers Integer
     noKids Integer
@@ -41,8 +42,7 @@ entity TourSchedule {
 }
 
 entity Driver {
-	firstName String required
-    lastName String required
+	name String required
     hiredAt Instant
     age Integer
 	email String
@@ -96,8 +96,8 @@ relationship OneToMany {
     Place{steps} to TourStep{place(name)}
     Place{images} to ImageFile{place(name)}
     Vehicle to TourSchedule{vehicle(plate)}
-    Driver to TourSchedule{Driver(lastName)}
-    TourSchedule{bookings} to Booking{schedule}
+    Driver to TourSchedule{Driver(name)}
+    TourSchedule{bookings} to Booking{schedule(code)}
     Passenger{bookings} to Booking{passenger(name)}
 }
 
