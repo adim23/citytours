@@ -1,0 +1,114 @@
+
+entity City { 
+	code String 
+    name String required
+}
+
+entity Place {
+	code String 
+    name String required
+    description TextBlob required
+    fullDescription TextBlob required
+    longitude String
+    latitude String
+}
+
+entity Tour {
+	code String 
+    title String required
+    duration Integer required
+    petFriendly Boolean required 
+    kidsAllowed Boolean required
+    availableFromDate LocalDate
+    availableToDate LocalDate
+    enabled Boolean required 
+}
+
+entity TourStep {
+	code String required
+    stepOrder Integer required
+    waitTime Long // minutes
+    driveTime Integer // minutes
+}
+
+entity TourSchedule {
+	startDatetime Instant required
+    noPassengers Integer
+    noKids Integer
+    noPets Integer
+    startPlace String
+    endPlace String
+}
+
+entity Driver {
+	firstName String required
+    lastName String required
+    hiredAt Instant
+    age Integer
+	email String
+	mobile String
+}
+
+entity Vehicle {
+	plate String required
+    type String required
+    capacity Integer required
+    color String
+}
+
+entity Booking {
+	bookDatetime Instant required
+    noPersons Integer
+    noKids Integer
+    noPets Integer
+    cost Double
+    paymentType String
+    valid Boolean
+    cancelledAt Instant
+    remoteData TextBlob
+    remoteId String
+}
+
+entity Passenger {
+	name String
+	email String
+	mobile String
+    age Integer
+	gender String
+    nationality String
+}
+
+entity ImageFile {
+	filename String
+    data ImageBlob
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    City{tours} to Tour{city(name)}
+    City{places} to Place{city(name)}
+    Tour to TourSchedule{tour(title)}
+    Tour{steps} to TourStep{tour(title)}
+    Place{steps} to TourStep{place(name)}
+    Place{images} to ImageFile{place(name)}
+    Vehicle to TourSchedule{vehicle(plate)}
+    Driver to TourSchedule{Driver(lastName)}
+    TourSchedule{bookings} to Booking{schedule}
+    Passenger{bookings} to Booking{passenger(name)}
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
