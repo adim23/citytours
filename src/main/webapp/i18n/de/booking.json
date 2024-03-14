@@ -1,0 +1,35 @@
+{
+  "citytoursApp": {
+    "booking": {
+      "home": {
+        "title": "Bookings",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Booking erstellen",
+        "createOrEditLabel": "Booking erstellen oder bearbeiten",
+        "notFound": "Keine Bookings gefunden"
+      },
+      "created": "Booking erstellt mit ID {{ param }}",
+      "updated": "Booking aktualisiert mit ID {{ param }}",
+      "deleted": "Booking gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Booking {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "id": "ID",
+      "bookDatetime": "Book Datetime",
+      "noPersons": "No Persons",
+      "noKids": "No Kids",
+      "noPets": "No Pets",
+      "cost": "Cost",
+      "paymentType": "Payment Type",
+      "valid": "Valid",
+      "cancelledAt": "Cancelled At",
+      "remoteData": "Remote Data",
+      "remoteId": "Remote Id",
+      "schedule": "Schedule",
+      "passenger": "Passenger"
+    }
+  }
+}

@@ -7,7 +7,17 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entitäten",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "city": "City",
+        "place": "Place",
+        "tour": "Tour",
+        "tourStep": "Tour Step",
+        "tourSchedule": "Tour Schedule",
+        "driver": "Driver",
+        "vehicle": "Vehicle",
+        "booking": "Booking",
+        "passenger": "Passenger",
+        "imageFile": "Image File"
       },
       "account": {
         "main": "Zugang",

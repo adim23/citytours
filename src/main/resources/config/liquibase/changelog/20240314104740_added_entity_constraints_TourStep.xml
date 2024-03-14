@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity TourStep.
+    -->
+    <changeSet id="20240314104740-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tour_id"
+                                 baseTableName="tour_step"
+                                 constraintName="fk_tour_step__tour_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tour"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="place_id"
+                                 baseTableName="tour_step"
+                                 constraintName="fk_tour_step__place_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="place"
+                                 />
+    </changeSet>
+</databaseChangeLog>

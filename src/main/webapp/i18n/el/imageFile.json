@@ -1,0 +1,26 @@
+{
+  "citytoursApp": {
+    "imageFile": {
+      "home": {
+        "title": "Image Files",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Image File",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Image File",
+        "notFound": "No Image Files found"
+      },
+      "created": "Ένα νέο Image File έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Image File έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Image File έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Image File {{ id }};"
+      },
+      "detail": {
+        "title": "Image File"
+      },
+      "id": "ID",
+      "filename": "Filename",
+      "data": "Data",
+      "place": "Place"
+    }
+  }
+}

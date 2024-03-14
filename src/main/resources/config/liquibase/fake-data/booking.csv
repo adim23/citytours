@@ -1,0 +1,11 @@
+id;book_datetime;no_persons;no_kids;no_pets;cost;payment_type;valid;cancelled_at;remote_data;remote_id
+1;2024-03-14T02:07:52;4722;6303;9134;30019.17;shorten if;false;2024-03-14T08:04:28;../fake-data/blob/hipster.txt;unaccountably
+2;2024-03-14T08:24:15;17740;9646;758;7949.17;selfishly;true;2024-03-14T04:22:39;../fake-data/blob/hipster.txt;aw
+3;2024-03-14T10:20:54;32146;10609;32589;21396.88;ick;true;2024-03-14T05:36:13;../fake-data/blob/hipster.txt;schedule
+4;2024-03-14T04:07:41;16068;7515;1050;3706.07;bah ugh pfft;true;2024-03-14T10:17:19;../fake-data/blob/hipster.txt;persuade
+5;2024-03-14T05:32:09;6805;8353;22877;15789.73;shoulder unnecessarily nervous;false;2024-03-13T22:06:27;../fake-data/blob/hipster.txt;aw rightfully
+6;2024-03-13T14:52:32;25663;9418;2495;13804.78;over;true;2024-03-14T01:36:05;../fake-data/blob/hipster.txt;because negative
+7;2024-03-14T08:04:02;2487;28419;18106;19379.8;instead yellow;true;2024-03-13T17:06:47;../fake-data/blob/hipster.txt;along pitiful since
+8;2024-03-13T13:49:59;9504;1093;25582;23328.84;fussy;true;2024-03-14T00:40:24;../fake-data/blob/hipster.txt;afore
+9;2024-03-13T23:16:04;18493;7744;20398;16328.66;so haze wherever;true;2024-03-13T13:46:05;../fake-data/blob/hipster.txt;exciting
+10;2024-03-13T17:17:59;7768;1781;3382;7139.61;gadzooks wherever contractor;true;2024-03-13T17:53:25;../fake-data/blob/hipster.txt;transmute where roughly

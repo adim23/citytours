@@ -1,0 +1,26 @@
+{
+  "citytoursApp": {
+    "imageFile": {
+      "home": {
+        "title": "Image Files",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Image File erstellen",
+        "createOrEditLabel": "Image File erstellen oder bearbeiten",
+        "notFound": "Keine Image Files gefunden"
+      },
+      "created": "Image File erstellt mit ID {{ param }}",
+      "updated": "Image File aktualisiert mit ID {{ param }}",
+      "deleted": "Image File gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Image File {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Image File"
+      },
+      "id": "ID",
+      "filename": "Filename",
+      "data": "Data",
+      "place": "Place"
+    }
+  }
+}

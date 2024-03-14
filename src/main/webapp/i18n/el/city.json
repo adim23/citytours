@@ -1,0 +1,27 @@
+{
+  "citytoursApp": {
+    "city": {
+      "home": {
+        "title": "Cities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο City",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα City",
+        "notFound": "No Cities found"
+      },
+      "created": "Ένα νέο City έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα City έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα City έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο City {{ id }};"
+      },
+      "detail": {
+        "title": "City"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "tours": "Tours",
+      "places": "Places"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240314105340"
+  },
+  "applications": "*",
+  "entityTableName": "image_file",
+  "fields": [
+    {
+      "fieldName": "filename",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "name": "ImageFile",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "place",
+      "otherEntityRelationshipName": "images",
+      "relationshipName": "place",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

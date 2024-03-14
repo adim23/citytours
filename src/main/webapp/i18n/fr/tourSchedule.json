@@ -1,0 +1,33 @@
+{
+  "citytoursApp": {
+    "tourSchedule": {
+      "home": {
+        "title": "TourSchedules",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Tour Schedule",
+        "createOrEditLabel": "Créer ou éditer un Tour Schedule",
+        "notFound": "Aucun Tour Schedule trouvé"
+      },
+      "created": "Un nouveau Tour Schedule a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Tour Schedule avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Tour Schedule avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Tour Schedule {{ id }} ?"
+      },
+      "detail": {
+        "title": "Tour Schedule"
+      },
+      "id": "ID",
+      "startDatetime": "Start Datetime",
+      "noPassengers": "No Passengers",
+      "noKids": "No Kids",
+      "noPets": "No Pets",
+      "startPlace": "Start Place",
+      "endPlace": "End Place",
+      "bookings": "Bookings",
+      "tour": "Tour",
+      "vehicle": "Vehicle",
+      "driver": "Driver"
+    }
+  }
+}

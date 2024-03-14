@@ -1,0 +1,72 @@
+{
+  "annotations": {
+    "changelogDate": "20240314105140"
+  },
+  "applications": "*",
+  "entityTableName": "booking",
+  "fields": [
+    {
+      "fieldName": "bookDatetime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "noPersons",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "noKids",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "noPets",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cost",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paymentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "valid",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cancelledAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "remoteData",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "remoteId",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Booking",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "tourSchedule",
+      "otherEntityRelationshipName": "bookings",
+      "relationshipName": "schedule",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "passenger",
+      "otherEntityRelationshipName": "bookings",
+      "relationshipName": "passenger",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

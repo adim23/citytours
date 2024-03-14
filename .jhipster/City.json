@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20240314104440"
+  },
+  "applications": "*",
+  "entityTableName": "city",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "City",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "tour",
+      "otherEntityRelationshipName": "city",
+      "relationshipName": "tours",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "place",
+      "otherEntityRelationshipName": "city",
+      "relationshipName": "places",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

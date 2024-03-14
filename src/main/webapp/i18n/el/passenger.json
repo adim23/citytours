@@ -1,0 +1,30 @@
+{
+  "citytoursApp": {
+    "passenger": {
+      "home": {
+        "title": "Passengers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Passenger",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Passenger",
+        "notFound": "No Passengers found"
+      },
+      "created": "Ένα νέο Passenger έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Passenger έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Passenger έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Passenger {{ id }};"
+      },
+      "detail": {
+        "title": "Passenger"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "mobile": "Mobile",
+      "age": "Age",
+      "gender": "Gender",
+      "nationality": "Nationality",
+      "bookings": "Bookings"
+    }
+  }
+}

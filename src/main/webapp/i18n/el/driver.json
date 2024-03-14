@@ -1,0 +1,30 @@
+{
+  "citytoursApp": {
+    "driver": {
+      "home": {
+        "title": "Drivers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Driver",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Driver",
+        "notFound": "No Drivers found"
+      },
+      "created": "Ένα νέο Driver έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Driver έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Driver έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Driver {{ id }};"
+      },
+      "detail": {
+        "title": "Driver"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "hiredAt": "Hired At",
+      "age": "Age",
+      "email": "Email",
+      "mobile": "Mobile",
+      "tourSchedule": "Tour Schedule"
+    }
+  }
+}

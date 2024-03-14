@@ -48,6 +48,26 @@ public class CacheConfiguration {
             createCache(cm, gr.adr.citytours.domain.User.class.getName());
             createCache(cm, gr.adr.citytours.domain.Authority.class.getName());
             createCache(cm, gr.adr.citytours.domain.User.class.getName() + ".authorities");
+            createCache(cm, gr.adr.citytours.domain.City.class.getName());
+            createCache(cm, gr.adr.citytours.domain.City.class.getName() + ".tours");
+            createCache(cm, gr.adr.citytours.domain.City.class.getName() + ".places");
+            createCache(cm, gr.adr.citytours.domain.Place.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Place.class.getName() + ".steps");
+            createCache(cm, gr.adr.citytours.domain.Place.class.getName() + ".images");
+            createCache(cm, gr.adr.citytours.domain.Tour.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Tour.class.getName() + ".tourSchedules");
+            createCache(cm, gr.adr.citytours.domain.Tour.class.getName() + ".steps");
+            createCache(cm, gr.adr.citytours.domain.TourStep.class.getName());
+            createCache(cm, gr.adr.citytours.domain.TourSchedule.class.getName());
+            createCache(cm, gr.adr.citytours.domain.TourSchedule.class.getName() + ".bookings");
+            createCache(cm, gr.adr.citytours.domain.Driver.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Driver.class.getName() + ".tourSchedules");
+            createCache(cm, gr.adr.citytours.domain.Vehicle.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Vehicle.class.getName() + ".tourSchedules");
+            createCache(cm, gr.adr.citytours.domain.Booking.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Passenger.class.getName());
+            createCache(cm, gr.adr.citytours.domain.Passenger.class.getName() + ".bookings");
+            createCache(cm, gr.adr.citytours.domain.ImageFile.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
